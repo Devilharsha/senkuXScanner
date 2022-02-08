@@ -1,8 +1,8 @@
-from Lovely_System import MONGO_CLIENT
+from Senku_System import MONGO_CLIENT
 from datetime import datetime
 from random import choice
 
-db = MONGO_CLIENT["Lovely"]["Main"]
+db = MONGO_CLIENT["Senku"]["Main"]
 
 
 async def get_data() -> dict:
