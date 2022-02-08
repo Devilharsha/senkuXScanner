@@ -1,4 +1,4 @@
-from Lovely_System import system_cmd, System
+from Senku_System import system_cmd, System
 from PIL import Image, ImageDraw, ImageFont
 import os
 
