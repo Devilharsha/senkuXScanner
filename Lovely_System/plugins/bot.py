@@ -1,7 +1,7 @@
-from Lovely_System import System, session, INSPECTORS, ENFORCERS, Lovely_logs
-from Lovely_System.strings import proof_string, scan_request_string, reject_string
-from Lovely_System.plugins.Mongo_DB.gbans import get_gban, get_gban_by_proofid
-import Lovely_System.plugins.Mongo_DB.bot_settings as db
+from Senku_System import System, session, INSPECTORS, ENFORCERS, Lovely_logs
+from Senku_System.strings import proof_string, scan_request_string, reject_string
+from Senku_System.plugins.Mongo_DB.gbans import get_gban, get_gban_by_proofid
+import Senku_System.plugins.Mongo_DB.bot_settings as db
 
 from telethon import events, custom
 
