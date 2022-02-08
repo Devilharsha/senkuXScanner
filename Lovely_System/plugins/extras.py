@@ -3,10 +3,10 @@ from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
 
-from Lovely_System.plugins.Mongo_DB.tree import add_inspector, add_enforcers, get_data
-from Lovely_System import ENFORCERS, INSPECTORS, Lovely, session
-from Lovely_System import System, system_cmd
-from Lovely_System import Lovely_logs
+from Senku_System.plugins.Mongo_DB.tree import add_inspector, add_enforcers, get_data
+from Senku_System import ENFORCERS, INSPECTORS, Lovely, session
+from Senku_System import System, system_cmd
+from Senku_System import Lovely_logs
 
 from datetime import datetime
 from urllib.parse import urlparse, urlunparse
@@ -16,7 +16,7 @@ import re
 import json
 
 try:
-    from Lovely_System import HEROKU_API_KEY, HEROKU_APP_NAME
+    from Senku_System import HEROKU_API_KEY, HEROKU_APP_NAME
 
     heroku_conn = heroku3.from_key(HEROKU_API_KEY)
     app = heroku_conn.app(HEROKU_APP_NAME)
