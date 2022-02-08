@@ -1,5 +1,5 @@
 from telethon.tl.functions.users import GetFullUserRequest
-from Lovely_System import System, system_cmd
+from Senku_System import System, system_cmd
 
 
 @System.on(system_cmd(pattern=r"whois"))
