@@ -1,4 +1,4 @@
-from Lovely_System import System, system_cmd
+from Senku_System import System, system_cmd
 import os
 import sys
 import subprocess
