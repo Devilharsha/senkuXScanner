@@ -1,4 +1,4 @@
-from Lovely_System import MONGO_CLIENT
+from Senku_System import MONGO_CLIENT
 from typing import Optional, Dict, Union
 
 db = MONGO_CLIENT["LovelySystemRobot"]["Main"]
