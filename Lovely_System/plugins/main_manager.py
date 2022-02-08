@@ -1,12 +1,12 @@
-from Lovely_System import Lovely_logs, ENFORCERS, Lovely, INSPECTORS
-from Lovely_System.strings import (
+from Senku_System import Lovely_logs, ENFORCERS, Lovely, INSPECTORS
+from Senku_System.trings import (
     scan_request_string,
     reject_string,
     proof_string,
     forced_scan_string,
 )
-from Lovely_System import System, system_cmd
-from Lovely_System.utils import seprate_flags, Flag
+from Senku_System import System, system_cmd
+from Senku_System.utils import seprate_flags, Flag
 
 import re
 
@@ -86,7 +86,7 @@ async def scan(event, flags):
         if message.from_id.user_id in ENFORCERS:
             return
         msg = await System.send_message(
-            Sibyl_logs,
+            Senku_logs,
             scan_request_string.format(
                 enforcer=executor,
                 spammer=message.from_id.user_id,
@@ -141,7 +141,7 @@ async def scan(event, flags):
         )
     if not approve:
         msg = await System.send_message(
-            Lovely_logs,
+            Senku_logs,
             scan_request_string.format(
                 enforcer=executor,
                 spammer=sender,
@@ -152,7 +152,7 @@ async def scan(event, flags):
         )
         return
     msg = await System.send_message(
-        Lovely_logs,
+        Senku_logs,
         forced_scan_string.format(
             ins=executor, spammer=sender, chat=chat, message=replied.text, reason=reason
         ),
