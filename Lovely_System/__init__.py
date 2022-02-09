@@ -26,41 +26,41 @@ if ENV:
     STRING_SESSION = os.environ.get("STRING_SESSION")
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY")
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME")
-    RAW_Lovely = os.environ.get("Lovely", "")
+    RAW_Senku = os.environ.get("Senku", "")
     RAW_ENFORCERS = os.environ.get("ENFORCERS", "")
-    Lovely = list(int(x) for x in os.environ.get("Lovely", "").split())
+    Senku = list(int(x) for x in os.environ.get("Lovely", "").split())
     INSPECTORS = list(int(x) for x in os.environ.get("INSPECTORS", "").split())
     ENFORCERS = list(int(x) for x in os.environ.get("ENFORCERS", "").split())
     MONGO_DB_URL = os.environ.get("MONGO_DB_URL")
-    Lovely_logs = int(os.environ.get("Lovely_logs"))
-    Lovely_approved_logs = int(os.environ.get("Lovely_approved_logs"))
+    Senku_logs = int(os.environ.get("Lovely_logs"))
+    Senku_approved_logs = int(os.environ.get("Lovely_approved_logs"))
     GBAN_MSG_LOGS = int(os.environ.get("GBAN_MSG_LOGS"))
     BOT_TOKEN = os.environ.get("BOT_TOKEN")
 else:
-    import Lovely_System.config as Config
+    import Senku_System.config as Config
 
     API_ID_KEY = Config.API_ID
     API_HASH_KEY = Config.API_HASH
     STRING_SESSION = Config.STRING_SESSION
     MONGO_DB_URL = Config.MONGO_DB_URL
-    with open(os.path.join(os.getcwd(), "Lovely_System/elevated_users.json"), "r") as f:
+    with open(os.path.join(os.getcwd(), "Senku_System/elevated_users.json"), "r") as f:
         data = json.load(f)
-    Lovely = data["Lovely"]
+    Senku = data["Senku"]
     ENFORCERS = data["ENFORCERS"]
     INSPECTORS = data["INSPECTORS"]
-    Lovely_logs = Config.Lovely_logs
-    Lovely_approved_logs = Config.Lovely_approved_logs
+    Senku_logs = Config.Senku_logs
+    Senku_approved_logs = Config.Senku_approved_logs
     GBAN_MSG_LOGS = Config.GBAN_MSG_LOGS
     BOT_TOKEN = Config.BOT_TOKEN
 
-INSPECTORS.extend(Lovely)
+INSPECTORS.extend(Senku)
 ENFORCERS.extend(INSPECTORS)
 
 session = aiohttp.ClientSession()
 
 MONGO_CLIENT = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
 
-from .client_class import LovelyClient
+from .client_class import SenkuClient
 
 try:
     System = LovelyClient(StringSession(STRING_SESSION), API_ID_KEY, API_HASH_KEY)
@@ -68,7 +68,7 @@ except:
     print(traceback.format_exc())
     exit(1)
 
-collection = MONGO_CLIENT["Lovely"]["Main"]
+collection = MONGO_CLIENT["Senku"]["Main"]
 
 
 async def make_collections() -> str:
@@ -123,7 +123,7 @@ def system_cmd(
     elif allow_inspectors and allow_Lovely:
         args["from_users"] = INSPECTORS
     else:
-        args["from_users"] = Lovely
+        args["from_users"] = Senku
     if force_reply:
         args["func"] = lambda e: e.is_reply
     return events.NewMessage(**args)
