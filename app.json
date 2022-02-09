@@ -1,6 +1,6 @@
 
 {
-      "name": "Lovely Scanner",
+      "name": "Senku X Scanner",
       "description": "Telegram Spam handling System.",
       "logo": "https://telegra.ph/file/ce3c1cb894516eda5bf26.jpg",
       "keywords": [
@@ -8,9 +8,9 @@
          "Spam",
          "handling",
          "System",
-         "Lovely Scanner"
+         "Senku Scanner"
       ],   
-   "repository": "https://github.com/Hodacka/LovelyXSystem",
+   "repository": "https://github.com/Devilharsha/senkuXSystem",
    "addons": [
       {
          "options": {
@@ -42,7 +42,7 @@
          "required": true,
          "value": ""
       },      
-      "Lovely": {
+      "Senku": {
          "description": "Users who approve gbans, manage blacklist etc.",
          "required": true,
          "value": ""
@@ -72,12 +72,12 @@
          "required": true,
          "value": ""
       },
-      "Lovely_logs": {
+      "Senki_logs": {
       "description": "  In this group all scan request come",
          "required": true,
          "value": ""
    },      
-      "Lovely_approved_logs": {
+      "Senku_approved_logs": {
          "description": "When approved it sends a message there.",
          "required": true,
          "value": ""
