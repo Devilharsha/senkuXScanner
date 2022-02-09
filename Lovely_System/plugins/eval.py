@@ -1,5 +1,5 @@
 import sys
-from Lovely_System import system_cmd, System
+from Senku_System import system_cmd, System
 from io import StringIO
 import traceback
 import inspect
@@ -7,7 +7,7 @@ import inspect
 # Thanks to stackoverflow for existing https://stackoverflow.com/questions/3906232/python-get-the-print-output-in-an-exec-statement
 
 
-@System.on(system_cmd(pattern=r"Lovely (exec|execute|x|ex)"))
+@System.on(system_cmd(pattern=r"Senku (exec|execute|x|ex)"))
 async def run(event):
     code = event.text.split(" ", 2)
     if len(code) == 2:
@@ -42,7 +42,7 @@ async def run(event):
     await event.reply(final + "`")
 
 
-@System.on(system_cmd(pattern=r"Lovely (ev|eva|eval|py)"))
+@System.on(system_cmd(pattern=r"Senku (ev|eva|eval|py)"))
 async def run_eval(event):
     cmd = event.text.split(" ", 2)
     cmd = cmd[2] if len(cmd) > 2 else ""
