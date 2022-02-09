@@ -1,12 +1,12 @@
-from Lovely_System import (
+from Senku_System import (
     System,
     system_cmd,
     make_collections,
     INSPECTORS,
     ENFORCERS,
-    Lovely_logs,
+    Senku_logs,
 )
-from Lovely_System.strings import on_string
+from Senku_System.strings import on_string
 import logging
 import importlib
 import asyncio
@@ -16,7 +16,7 @@ logging.basicConfig(
     format="[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s", level=logging.WARNING
 )
 
-from Lovely_System.plugins import to_load
+from Senku_System.plugins import to_load
 
 HELP = {}
 IMPORTED = {}
@@ -43,7 +43,7 @@ for load in to_load:
 
 @System.on(system_cmd(pattern=r"status", allow_enforcer=True))
 async def status(event):
-    msg = await event.reply("Connecting to Lovely Systems.")
+    msg = await event.reply("Connecting to Senku Systems.")
     time.sleep(1)
     await msg.edit("Initialising ■□□□□□")
     time.sleep(1)
@@ -65,7 +65,7 @@ async def status(event):
     await msg.edit(on_string.format(Enforcer=user_status, name=sender.first_name))
 
 
-@System.on(system_cmd(pattern="Lovely stats"))
+@System.on(system_cmd(pattern="Senku stats"))
 async def stats(event):
     msg = f"Processed {System.processed} messages since last restart."
     msg += f"\n{len(ENFORCERS)} Enforcers & {len(INSPECTORS)} Inspectors"
@@ -108,9 +108,9 @@ async def main():
         msg = "Few plugins failed to load:"
         for plugin in FAILED_TO_LOAD:
             msg += f"\n**{plugin}**\n\n`{FAILED_TO_LOAD[plugin]}`"
-        await System.send_message(Lovely_logs, msg)
+        await System.send_message(Senku_logs, msg)
     else:
-        await System.send_message(Lovely_logs, "I'm On Love!")
+        await System.send_message(Senku_logs, "I'm On Fire!")
     await System.run_until_disconnected()
 
 
