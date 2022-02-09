@@ -2,7 +2,7 @@
 
 > A proactive judgement system for group chats.
 
-[![Lovely X System](https://telegra.ph/file/3bbc9e24b2573522af2e0.jpg "Lovely X System")](https://github.com/Hodacka/Lovely-System "LovelyXSystem")
+[![Senku X System (https://telegra.ph/file/31138221a3cb7058d0188.jpg) "senku X System")](https://github.com/Devilharsha/SenkuXSystem "SenkuXSystem")
 
 ## A Telethon Userbot to make handling spam easer
 
